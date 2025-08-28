@@ -1,0 +1,134 @@
+﻿unit mlangController_u;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Data.Win.ADODB, Data.DB, Vcl.StdCtrls,
+  Vcl.Mask, Vcl.ExtCtrls, Vcl.DBCtrls, Vcl.Grids, Vcl.DBGrids;
+
+type
+  TForm2 = class(TForm)
+    ADOConnection1: TADOConnection;
+    ADOTable1: TADOTable;
+    DBGrid1: TDBGrid;
+    DataSource1: TDataSource;
+    trEdit: TDBEdit;
+    enEdit: TDBEdit;
+    deEdit: TDBEdit;
+    frEdit: TDBEdit;
+    updateRowButton: TButton;
+    addRowButton: TButton;
+    deleteRowButton: TButton;
+    idEdit: TDBEdit;
+    Label1: TLabel;
+    Label2: TLabel;
+    Label3: TLabel;
+    Label4: TLabel;
+    Label5: TLabel;
+    procedure FormActivate(Sender: TObject);
+    procedure addRowButtonClick(Sender: TObject);
+    procedure deleteRowButtonClick(Sender: TObject);
+    procedure updateRowButtonClick(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Form2: TForm2;
+
+implementation
+
+{$R *.dfm}
+
+
+procedure TForm2.FormActivate(Sender: TObject);
+var
+  colWidth, remainingWidth, i, fixedFirstCol: Integer;
+begin
+  if DBGrid1.Columns.Count > 0 then
+  begin
+    fixedFirstCol := 50;
+    remainingWidth := (DBGrid1.ClientWidth - GetSystemMetrics(SM_CXVSCROLL) - fixedFirstCol);
+    colWidth := remainingWidth div (DBGrid1.Columns.Count - 1);
+    DBGrid1.Columns[0].Width := fixedFirstCol;
+    for i := 1 to DBGrid1.Columns.Count - 1 do
+      DBGrid1.Columns[i].Width := colWidth;
+  end;
+
+  DBGrid1.Options := DBGrid1.Options - [dgEditing, dgAlwaysShowEditor];
+end;
+
+procedure TForm2.addRowButtonClick(Sender: TObject);
+var
+  trVal, enVal, deVal, frVal: string;
+begin
+  trVal := Trim(trEdit.Text);
+  enVal := Trim(enEdit.Text);
+  deVal := Trim(deEdit.Text);
+  frVal := Trim(frEdit.Text);
+
+  if trVal = '' then
+  begin
+    ShowMessage('TR alanı boş bırakılamaz!');
+    Exit;
+  end;
+
+  ADOTable1.Cancel;
+  ADOTable1.Append;
+  ADOTable1.FieldByName('TR').AsString := trVal;
+  ADOTable1.FieldByName('EN').AsString := enVal;
+  ADOTable1.FieldByName('DE').AsString := deVal;
+  ADOTable1.FieldByName('FR').AsString := frVal;
+  ADOTable1.Post;
+
+  // DBEdit’leri temizle
+  trEdit.Text := '';
+  enEdit.Text := '';
+  deEdit.Text := '';
+  frEdit.Text := '';
+
+  MessageDlg('Yeni kayıt başarıyla eklendi!', mtInformation, [mbOK], 0);
+end;
+
+
+
+procedure TForm2.deleteRowButtonClick(Sender: TObject);
+begin
+  if ADOTable1.IsEmpty then Exit;
+
+  if MessageDlg('Bu satırı silmek istediğinize emin misiniz?', mtConfirmation, [mbYes,mbNo], 0) = mrYes then
+    ADOTable1.Delete;
+end;
+
+procedure TForm2.updateRowButtonClick(Sender: TObject);
+var
+  trVal, enVal, deVal, frVal: string;
+begin
+  if ADOTable1.IsEmpty then Exit;
+
+  trVal := Trim(trEdit.Text);
+  enVal := Trim(enEdit.Text);
+  deVal := Trim(deEdit.Text);
+  frVal := Trim(frEdit.Text);
+
+  if trVal = '' then
+  begin
+    ShowMessage('TR alanı boş bırakılamaz!');
+    Exit;
+  end;
+
+  // Sadece seçili satırı güncelle
+  ADOTable1.Edit;
+  ADOTable1.FieldByName('TR').AsString := trVal;
+  ADOTable1.FieldByName('EN').AsString := enVal;
+  ADOTable1.FieldByName('DE').AsString := deVal;
+  ADOTable1.FieldByName('FR').AsString := frVal;
+  ADOTable1.Post;
+end;
+
+
+
+end.

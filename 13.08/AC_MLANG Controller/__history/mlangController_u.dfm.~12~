@@ -1,0 +1,270 @@
+object Form2: TForm2
+  Left = 0
+  Top = 0
+  Caption = 'MLANG Controller'
+  ClientHeight = 561
+  ClientWidth = 784
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -12
+  Font.Name = 'Segoe UI'
+  Font.Style = []
+  Position = poDesktopCenter
+  OnActivate = FormActivate
+  TextHeight = 15
+  object Label1: TLabel
+    Left = 139
+    Top = 17
+    Width = 15
+    Height = 21
+    Caption = 'ID'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -16
+    Font.Name = 'Segoe UI'
+    Font.Style = []
+    ParentFont = False
+  end
+  object Label2: TLabel
+    Left = 136
+    Top = 54
+    Width = 18
+    Height = 21
+    Caption = 'TR'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -16
+    Font.Name = 'Segoe UI'
+    Font.Style = []
+    ParentFont = False
+  end
+  object Label3: TLabel
+    Left = 134
+    Top = 89
+    Width = 20
+    Height = 21
+    Caption = 'EN'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -16
+    Font.Name = 'Segoe UI'
+    Font.Style = []
+    ParentFont = False
+  end
+  object Label4: TLabel
+    Left = 135
+    Top = 124
+    Width = 19
+    Height = 21
+    Caption = 'DE'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -16
+    Font.Name = 'Segoe UI'
+    Font.Style = []
+    ParentFont = False
+  end
+  object Label5: TLabel
+    Left = 136
+    Top = 158
+    Width = 18
+    Height = 21
+    Caption = 'FR'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -16
+    Font.Name = 'Segoe UI'
+    Font.Style = []
+    ParentFont = False
+  end
+  object DBGrid1: TDBGrid
+    Left = 8
+    Top = 208
+    Width = 768
+    Height = 345
+    DataSource = DataSource1
+    TabOrder = 0
+    TitleFont.Charset = DEFAULT_CHARSET
+    TitleFont.Color = clWindowText
+    TitleFont.Height = -12
+    TitleFont.Name = 'Segoe UI'
+    TitleFont.Style = []
+    Columns = <
+      item
+        Alignment = taLeftJustify
+        Expanded = False
+        FieldName = 'LANG_ID'
+        Width = 80
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'TR'
+        Width = 167
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'EN'
+        Width = 167
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'DE'
+        Width = 167
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'FR'
+        Width = 167
+        Visible = True
+      end>
+  end
+  object trEdit: TDBEdit
+    Left = 160
+    Top = 50
+    Width = 360
+    Height = 29
+    DataField = 'TR'
+    DataSource = DataSource1
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -16
+    Font.Name = 'Segoe UI'
+    Font.Style = []
+    ParentFont = False
+    TabOrder = 1
+  end
+  object enEdit: TDBEdit
+    Left = 160
+    Top = 85
+    Width = 360
+    Height = 29
+    DataField = 'EN'
+    DataSource = DataSource1
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -16
+    Font.Name = 'Segoe UI'
+    Font.Style = []
+    ParentFont = False
+    TabOrder = 2
+  end
+  object deEdit: TDBEdit
+    Left = 160
+    Top = 121
+    Width = 360
+    Height = 29
+    DataField = 'DE'
+    DataSource = DataSource1
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -16
+    Font.Name = 'Segoe UI'
+    Font.Style = []
+    ParentFont = False
+    TabOrder = 3
+  end
+  object frEdit: TDBEdit
+    Left = 160
+    Top = 155
+    Width = 360
+    Height = 29
+    DataField = 'FR'
+    DataSource = DataSource1
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -16
+    Font.Name = 'Segoe UI'
+    Font.Style = []
+    ParentFont = False
+    TabOrder = 4
+  end
+  object updateRowButton: TButton
+    Left = 526
+    Top = 85
+    Width = 115
+    Height = 30
+    Caption = 'G'#252'ncelle'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -16
+    Font.Name = 'Segoe UI'
+    Font.Style = []
+    ParentFont = False
+    TabOrder = 5
+    OnClick = updateRowButtonClick
+  end
+  object addRowButton: TButton
+    Left = 526
+    Top = 120
+    Width = 115
+    Height = 30
+    Caption = 'Ekle'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -16
+    Font.Name = 'Segoe UI'
+    Font.Style = []
+    ParentFont = False
+    TabOrder = 6
+    OnClick = addRowButtonClick
+  end
+  object deleteRowButton: TButton
+    Left = 526
+    Top = 155
+    Width = 115
+    Height = 30
+    Caption = 'Sil'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -16
+    Font.Name = 'Segoe UI'
+    Font.Style = []
+    ParentFont = False
+    TabOrder = 7
+    OnClick = deleteRowButtonClick
+  end
+  object idEdit: TDBEdit
+    Left = 160
+    Top = 15
+    Width = 120
+    Height = 29
+    DataField = 'LANG_ID'
+    DataSource = DataSource1
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -16
+    Font.Name = 'Segoe UI'
+    Font.Style = []
+    ParentFont = False
+    ReadOnly = True
+    TabOrder = 8
+  end
+  object ADOConnection1: TADOConnection
+    Connected = True
+    ConnectionString = 
+      'Provider=SQLOLEDB.1;Password=hCn1mys!dS;Persist Security Info=Tr' +
+      'ue;User ID=SA;Initial Catalog=ROMECOFFEE;Data Source=192.168.0.1' +
+      '18,1433'
+    Provider = 'SQLOLEDB.1'
+    Left = 32
+    Top = 16
+  end
+  object ADOTable1: TADOTable
+    Active = True
+    Connection = ADOConnection1
+    CursorType = ctStatic
+    TableName = 'AC_MLANG'
+    Left = 32
+    Top = 72
+  end
+  object DataSource1: TDataSource
+    DataSet = ADOTable1
+    Left = 32
+    Top = 128
+  end
+end
