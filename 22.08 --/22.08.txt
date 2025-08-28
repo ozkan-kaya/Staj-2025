@@ -1,0 +1,9 @@
+Bugün, stajın son günü olması nedeniyle Delphi VCL projelerinin son kontrolleri ve testleri yapıldı. Bu süreçte, kullanılan bileşenler, form tasarımları ve uygulama mantıkları detaylı bir şekilde gözden geçirildi; öğrenilen bilgiler pekiştirilmek amacıyla notlar alındı.
+
+Staj boyunca, Delphi’nin VCL kütüphanesi ile form tasarımı, veri tabanı bağlantıları, buton ve etiket kullanımı gibi temel konular hem teorik olarak öğrenildi hem de projelerde aktif bir şekilde uygulandı. Bu sayede Windows uygulamaları geliştirme konusunda daha sağlam bir bilgi birikimi elde edildi ve bilgiler projeler üzerinden pratiğe döküldü.
+
+Projelerin genel yapısı, kod düzenlemeleri, bileşenlerin konumlandırılması ve veritabanı entegrasyonları kontrol edildi; projelerin çalışır ve teslim edilebilir durumda olduğundan emin olundu.
+
+Gün boyunca, staj süresince edinilen bilgiler ve tecrübeler tekrar gözden geçirildi; tüm bileşen kullanımları ve programlama teknikleri analiz edildi. Bu analizler, gelecekte benzer VCL projelerinde daha hızlı ve hatasız çalışabilmek için önemli bir temel oluşturdu.
+
+Staj başarıyla tamamlandı, projeler eksiksiz şekilde GitHub’a yüklendi ve bu süreçten edindiğim deneyimler benim için çok değerli oldu.

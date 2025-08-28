@@ -1,0 +1,7 @@
+Bugün Arkhe şirketine ait Denge ve DengeSmart uygulamalarının kurulum süreçleri gerçekleştirildi. Kurulumun temel amacı, ileride yapacağımız projelerde uygulamalara bağlı veritabanı yapısını ve denge sisteminin işleyiş mantığını anlamaktı.
+
+Mac ortamında Windows sanal makine ile çalışmanın getirdiği donanım ve sistem farklılıkları nedeniyle bazı uyumluluk sorunları ve kurulum zorluklarıyla karşılaşıldı. Özellikle DengePDA servisi ve Windows ortamındaki bazı servislerin ve bağımlılıkların sanal makinede doğru şekilde çalışmasını sağlamak başlangıçta problem oluşturdu.
+
+Tüm bu zorluklara rağmen gerekli ayarlamalar yapılarak her iki uygulamanın kurulumları başarıyla tamamlandı. Kurulum sonrası uygulamalar çalıştırıldı ve uygulamalara bağlı veritabanları incelendi. Veritabanlarının yapısı, tabloların ilişkileri ve uygulamalar üzerindeki işleyişleri detaylı şekilde gözden geçirildi.
+
+Bu süreç, veritabanı yapısını ve denge sisteminin işleyişini anlamak açısından önemli bir deneyim sağladı. Farklı işletim sistemleri ve ortamlar arasında uygulama yönetimi yapılırken karşılaşılan zorluklar aşıldı, uygulamalar sorunsuz şekilde çalıştırıldı ve veri yönetimi mekanizmaları detaylı şekilde incelendi.
